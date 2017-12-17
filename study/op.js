@@ -7,8 +7,8 @@ document.getElementById("localConnection").onclick = function () {
 }
 
 function connection(ip, port) {
-    // noinspection JSAnnotator
     localClient = redis.createClient(port, ip);
+    sessionStorage.setItem("local", port + ":" + ip);
     localClient.on('ready', function (err) {
         document.getElementById("console").innerText = "连接成功"
     });
