@@ -1,16 +1,74 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-    <title>Hello World!</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }</script>
+
+    <!-- normal script imports etc  -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-<input type="text" id="inputCmd" />
-<input type="button" id="submitCmd" value="connection">
-<div id="content">
+
+<div class="row">
+    <!--连接列表-->
+    <div class="list-group col-md-3 " style="margin-left: 20px;margin-top: 20px">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#" id="localConnection">本地连接</a></li>
+            <li role="presentation">
+                <!-- Button trigger modal -->
+                <a href="#" id="" data-toggle="modal" data-target="#myModal" > 新建连接</a>
+            <!--    <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">
+                    新建连接
+                </button>
+-->
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">新建连接</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="ip"
+                                           aria-describedby="sizing-addon2">
+                                    <input type="text" class="form-control" placeholder="port"
+                                           aria-describedby="sizing-addon2">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">connection</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li role="presentation"><a href="#">我的连接</a></li>
+        </ul>
+    </div>
+
+    <div class="col-md-8" style="max-height: 980px">
+        <div class="container" id="console" style="">
+        </div>
+    </div>
 
 </div>
-</body>
-<script>
-    require('./redisOp.js');
+<script src="op.js">
+
 </script>
+</body>
+
 </html>

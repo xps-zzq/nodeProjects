@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "dependencies": {
     "redis": "^2.8.0",
-    "ejs": ""
+    "bootstrap": "^3.3.7",
+    "jquery": ""
+
+
   }
 }
